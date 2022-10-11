@@ -12,10 +12,10 @@ export class App {
         this.app = express();
         this.port = 8080;
         this.logger = logger
-        this.server = this.app.listen(this.port)
     }
     
     public async init() {
+        this.server = this.app.listen(this.port)
         this.logger.log(`Server created in http://127.0.0.1:${this.port}`)
     }
 }
