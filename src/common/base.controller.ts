@@ -32,6 +32,5 @@ export abstract class BaseController {
             this.logger.log(`[${route.method}] ${route.path}`)
             this.router[route.method](route.path, route.func.bind(this))
         }
-
     }
 }
