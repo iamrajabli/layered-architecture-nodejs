@@ -4,8 +4,10 @@ import { LoggerService } from "../logger/logger.service";
 
 export abstract class BaseController {
     private readonly _router: Router;
+    logger: LoggerService;
 
-    constructor(private logger: LoggerService) {
+    constructor(logger: LoggerService) {
+        this.logger = logger;
         this._router = Router();
     }
 

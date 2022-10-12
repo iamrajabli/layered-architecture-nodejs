@@ -1,3 +1,4 @@
+import { HttpError } from './../errors/http-error';
 import { Request, Response, NextFunction } from 'express';
 import { BaseController } from "../common/base.controller";
 import { LoggerService } from "../logger/logger.service";
@@ -12,7 +13,8 @@ export class UserController extends BaseController {
     }
 
     login(req: Request, res: Response, next: NextFunction) {
-        this.ok(res, 'login')
+        next(new HttpError(404, 'not authorization', 'login'))
+        // this.ok(res, 'login')
     }
 
     register(req: Request, res: Response, next: NextFunction) {
